@@ -1,0 +1,1120 @@
+{
+	"categories": [
+		{
+			"name": "国内",
+			"columnid": 21,
+			"columnviceid": 1,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://feed.sina.com.cn/api/roll/get?",
+			"params": {
+				"versionNumber": "1.2.4",
+				"num": 30,
+				"encode": "utf-8",
+				"pageid": 121,
+				"lid": 1356,
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "intro",
+				"pdate": "intime",
+				"link": "url",
+				"image": ["img,u", "images,0,u"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "军事",
+			"columnid": 22,
+			"columnviceid": 1,
+			"method": "GET",
+			"listType": "HTML",
+			"uri": "http://mil.news.sina.com.cn/roll/index.d.html?",
+			"params": {
+				"cid": 57919,
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"listArea": "/<div class=\"fixList\">(.*?)<\\\/div>/",
+			"item": "/<li>/",
+			"setKeys": {
+				"title": "/<a.*?>(.*?)</",
+				"scontent": "/<none>/",
+				"link": "/<a.*?href=\"(.*?)\"/"
+			},
+			"itemPage": {
+				"content": "/(<div class=\"article\".*?)<div class=\"article-bottom clearfix\"/",
+				"pdate": "/<span class=\"date\">(.*?)<\\\/span>/",
+				"pdateRepPattern": {
+					"年": "-",
+					"月": "-",
+					"日": ""
+				},
+				"source": "/<span class=\"date\">.*?<a.*?class=\"source\".*?>(.*?)</",
+				"image": "/<div class=\"article\".*?<img.*src=\"(.*?)\"/"
+			}
+		},
+		{
+			"name": "国际",
+			"columnid": 23,
+			"columnviceid": 1,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/news/get_news_by_channel_new_v2018.d.html?",
+			"params": {
+				"cat_1":"51923",
+				"show_num":200,
+				"level":"1,2"
+			},
+			"modifyKeys": null,
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "ext5",
+				"pdate": "createtime",
+				"link": "url",
+				"image": ["img"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "股票",
+			"columnid": 24,
+			"columnviceid": 2,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/finance/api_stock_sdyj.d.json?",
+			"params": {
+				"page": 1,
+				"num": 10
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "time",
+				"notTimestamp": true,
+				"link": "url",
+				"image": ["pic"],
+				"source": "source"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "基金",
+			"columnid": 25,
+			"columnviceid": 2,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/finance/api_fund_sdyj.d.json?",
+			"params": {
+				"page":1,
+				"num":60
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "time",
+				"notTimestamp": true,
+				"link": "url",
+				"image": ["pic"],
+				"source": "source"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "理财",
+			"columnid": 26,
+			"columnviceid": 2,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://api.roll.news.sina.com.cn/zt_list?",
+			"params": {
+				"channel":"finance",
+				"cat_1":"lc1",
+				"cat_2":"lcgh",
+				"show_all":1,
+				"show_ext":1,
+				"tag":1,
+				"format":"json",
+				"show_num":23,
+				"page":1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "ext5",
+				"pdate": "createtime",
+				"link": "url",
+				"image": ["img"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "外汇",
+			"columnid": 27,
+			"columnviceid": 2,
+			"method": "GET",
+			"listType": "HTML",
+			"uri": "http://finance.sina.com.cn/roll/index.d.html?",
+			"params": {
+				"cid": "56982",
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"listArea": "/(<div class=\"hs01\">.*?)<div class=\"hs01\">/",
+			"item": "/<li>/",
+			"setKeys": {
+				"title": "/<a.*?>(.*?)<\\\/a>/",
+				"scontent": "/<p class=\"intro\">(.*?)</",
+				"link": "/<a.*?href=\"(.*?)\"/"
+			},
+			"itemPage": {
+				"pdate": "/class=\"date\">(.*?)</",
+				"pdateRepPattern": {
+					"年": "-",
+					"月": "-",
+					"日": ""
+				},
+				"source": "/class=\"source ent-source\".*?>(.*?)</",
+				"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/",
+				"image": "/<div class=\"article\" id=\"arti.*?<img.*?src=\"(.*?)\"/"
+			}
+		},
+		{
+			"name": "NBA",
+			"columnid": 28,
+			"columnviceid": 5,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre": "tianyi",
+				"mod": "nt_home_sports_nba",
+				"merge": 3,
+				"statics": 1,
+				"offset": 0,
+				"down": 0,
+				"cids": "57316",
+				"editLevel": "0,1,2,3,4",
+				"pageSize": 12,
+				"type": "sports_news",
+				"action": 0,
+				"up": 0
+			},
+			"modifyKeys": {
+				"action": [0, 1], 
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "国际足球",
+			"columnid": 29,
+			"columnviceid": 5,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_sports_global",
+				"merge":3,
+				"statics":1,
+				"offset":0,
+				"action":0,
+				"up":0,
+				"down":0,
+				"cids":"57307",
+				"editLevel":"0,1,2,3,4",
+				"pageSize":12,
+				"type":"sports_news"
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "国足",
+			"columnid": 30,
+			"columnviceid": 5,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre": "tianyi",
+				"mod": "nt_home_sports_china",
+				"merge": 3,
+				"statics": 1,
+				"offset": 0,
+				"down": 0,
+				"cids": "57299",
+				"editLevel": "0,1,2,3,4",
+				"pageSize": 12,
+				"type": "sports_news",
+				"action": 0,
+				"up": 0
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "综合体育",
+			"columnid": 31,
+			"columnviceid": 5,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://cre.mix.sina.com.cn/get/cms/feed?",
+			"params": {
+				"pcProduct":33,
+				"merge":3,
+				"mod":"pcsptw",
+				"cre":"tianyi",
+				"statics":1,
+				"length":200
+			},
+			"modifyKeys": null,
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "intro",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "手机",
+			"columnid": 32,
+			"columnviceid": 15,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_tech_mobil",
+				"merge":3,
+				"statics":1,
+				"length":15,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"40813",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "互联网",
+			"columnid": 33,
+			"columnviceid": 15,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_tech_chuangshiji",
+				"merge":3,
+				"statics":1,
+				"length":15,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"40823",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/正文内容 begin.*?(<div.*?id=\"artibody\".*?)<div class=\"attitude\"/"
+		},
+		{
+			"name": "数码",
+			"columnid": 34,
+			"columnviceid": 15,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_tech_digi",
+				"merge":3,
+				"statics":1,
+				"length":15,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"40814,40820",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "探索",
+			"columnid": 35,
+			"columnviceid": 15,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_tech_discovery",
+				"merge":3,
+				"statics":1,
+				"length":15,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"40821",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "音乐",
+			"columnid": 36,
+			"columnviceid": 3,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://feed.sina.com.cn/api/roll/get?",
+			"params": {
+				"versionNumber": "1.2.4",
+				"num": 30,
+				"encode": "utf-8",
+				"pageid": 50,
+				"lid": 697,
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "intro",
+				"pdate": "intime",
+				"link": "url",
+				"image": ["img,u", "images,0,u"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "电影",
+			"columnid": 37,
+			"columnviceid": 3,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://feed.sina.com.cn/api/roll/get?",
+			"params": {
+				"versionNumber": "1.2.4",
+				"num": 30,
+				"encode": "utf-8",
+				"pageid": 51,
+				"lid": 740,
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "intro",
+				"pdate": "intime",
+				"link": "url",
+				"image": ["img,u", "images,0,u"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "电视",
+			"columnid": 38,
+			"columnviceid": 3,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://feed.sina.com.cn/api/roll/get?",
+			"params": {
+				"versionNumber": "1.2.4",
+				"num": 30,
+				"encode": "utf-8",
+				"pageid": 105,
+				"lid": 1217,
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "intro",
+				"pdate": "intime",
+				"link": "url",
+				"image": ["img,u", "images,0,u"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "综艺",
+			"columnid": 39,
+			"columnviceid": 3,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://feed.sina.com.cn/api/roll/get?",
+			"params": {
+				"versionNumber": "1.2.4",
+				"num": 30,
+				"encode": "utf-8",
+				"pageid": 37,
+				"lid": 531,
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1, 1]
+			},
+			"responseListKey": "result,data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "intro",
+				"pdate": "intime",
+				"link": "url",
+				"image": ["img,u", "images,0,u"],
+				"source": "media_name"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "新车",
+			"columnid": 40,
+			"columnviceid": 6,
+			"method": "GET",
+			"listType": "JSONHTML",
+			"uri": "http://interface.sina.cn/auto/inner/getAutoSubpageInfo.d.json?",
+			"params": {
+				"cid":"158929",
+				"pageSize":15,
+				"page":1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"responseListKey": "data",
+			"item": "/<div class=\"con\">/",
+			"setKeys": {
+				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
+				"scontent": "/<p class=\"intro\">(.*?)</",
+				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"notTimestamp": true,
+				"link": "/<h3><a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/"
+			},
+			"itemPage": {
+				"source": "/class=\"source ent-source\".*?>(.*?)</",
+				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+			}
+		},
+		{
+			"name": "技术",
+			"columnid": 41,
+			"columnviceid": 6,
+			"method": "GET",
+			"listType": "JSONHTML",
+			"uri": "http://interface.sina.cn/auto/inner/getAutoSubpageInfo.d.json?",
+			"params": {
+				"cid":"78580",
+				"pageSize":15,
+				"page":1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"responseListKey": "data",
+			"item": "/<div class=\"con\">/",
+			"setKeys": {
+				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
+				"scontent": "/<p class=\"intro\">(.*?)</",
+				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"notTimestamp": true,
+				"link": "/<h3><a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/"
+			},
+			"itemPage": {
+				"source": "/class=\"source ent-source\".*?>(.*?)</",
+				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+			}
+		},
+		{
+			"name": "导购",
+			"columnid": 42,
+			"columnviceid": 6,
+			"method": "GET",
+			"listType": "JSONHTML",
+			"uri": "http://interface.sina.cn/auto/inner/getAutoSubpageInfo.d.json?",
+			"params": {
+				"cid":"160399",
+				"pageSize":15,
+				"page":1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"responseListKey": "data",
+			"item": "/<div class=\"con\">/",
+			"setKeys": {
+				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
+				"scontent": "/<p class=\"intro\">(.*?)</",
+				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"notTimestamp": true,
+				"link": "/<h3><a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/"
+			},
+			"itemPage": {
+				"source": "/class=\"source ent-source\".*?>(.*?)</",
+				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+			}
+		},
+		{
+			"name": "行业",
+			"columnid": 43,
+			"columnviceid": 6,
+			"method": "GET",
+			"listType": "JSONHTML",
+			"uri": "http://interface.sina.cn/auto/inner/getAutoSubpageInfo.d.json?",
+			"params": {
+				"cid":"78877",
+				"pageSize":15,
+				"page":1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"responseListKey": "data",
+			"item": "/<div class=\"con\">/",
+			"setKeys": {
+				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
+				"scontent": "/<p class=\"intro\">(.*?)</",
+				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"notTimestamp": true,
+				"link": "/<h3><a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/"
+			},
+			"itemPage": {
+				"source": "/class=\"source ent-source\".*?>(.*?)</",
+				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+			}
+		},
+		{
+			"name": "家居",
+			"columnid": 44,
+			"columnviceid": 16,
+			"method": "GET",
+			"listType": "HTML",
+			"uri": "http://news.jiaju.sina.com.cn/list-jiaju-a50b69o1",
+			"params": {
+				"p": 1
+			},
+			"irregParams": true,
+			"modifyKeys": {
+				"p": [1,1]
+			},
+			"listArea": "/(<div class=\"newslist\">.*?)<div class=\"loadmore\"/",
+			"item": "/<dl class=\"clearfix onepic\">/",
+			"setKeys": {
+				"title": "/<h4>.*?<a.*?>(.*?)</",
+				"scontent": "/<p class=\"intro\">(.*?)</",
+				"link": "/<h4>.*?<a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?lsrc=\"(.*?)\"/",
+				"pdate": "/data-time=\"(.*?)\"/",
+				"source": "/<div class=\"fr\">.*?<a.*?>(.*?)<\\\/a>/"
+			},
+			"itemPage": {
+				"content": "/(<div id=\"articleText\">.*?)<div id=\"keyword\"/"
+			}
+		},
+		{
+			"name": "置业",
+			"columnid": 45,
+			"columnviceid": 16,
+			"method": "GET",
+			"listType": "HTML",
+			"uri": "https://news.xhwhouse.com/news-f2-",
+			"params": {
+				"p": 1
+			},
+			"irregParams": true,
+			"modifyKeys": {
+				"p": [1,1]
+			},
+			"listArea": "/<ul class=\"down_text\">(.*?)<\\\/ul>/",
+			"item": "/<li>/",
+			"setKeys": {
+				"title": "/<h2>.*?<a.*?>(.*?)</",
+				"scontent": "/<p class=\"head_text\">(.*?)</",
+				"link": "/<h2>.*?<a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/",
+				"notTimestamp": true
+			},
+			"itemPage": {
+				"pdate": "/<ul class=\"share_one\">.*?<li>.*?<li>(.*?)</",
+				"source": "/<ul class=\"share_one\">.*?<li>(.*?)</",
+				"content": "/(<div class=\"quintessence\".*?)<div class=\"enterinto\"/"
+			}
+		},
+		{
+			"name": "装修",
+			"columnid": 46,
+			"columnviceid": 16,
+			"method": "GET",
+			"listType": "HTML",
+			"uri": "http://bj.7gz.com/zixun/1",
+			"params": {
+				"/": 1
+			},
+			"irregParams": true,
+			"modifyKeys": {
+				"/": [1,1]
+			},
+			"listArea": "/(<!--列表开始-->.*?)<!--列表结束-->/",
+			"item": "/<div class=\"clearfix ds_item_news\">/",
+			"setKeys": {
+				"title": "/<strong class=\"ds_tit\"><a.*?>(.*?)</",
+				"scontent": "/<p class=\"ds_txt\">(.*?)<a/",
+				"link": "/<strong class=\"ds_tit\"><a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/",
+				"notTimestamp": true
+			},
+			"itemPage": {
+				"content": "/<div class=\"m_info_detail_con\">(.*?)<div class=\"m_info_detail_pagebox\">/",
+				"pdate": "/<span class=\"m_mr10\">(.*?)</",
+				"source": "/来源.*?<span class=\"m_mr30\">(.*?)</"
+			}
+		},
+		{
+			"name": "土地",
+			"columnid": 47,
+			"columnviceid": 16,
+			"method": "GET",
+			"listType": "HTML",
+			"uri": "http://tudi.leju.com/news/?",
+			"params": {
+				"page": 1
+			},
+			"modifyKeys": {
+				"page": [1,1]
+			},
+			"listArea": "/(<ul class=\"y_new_list y_new_list02\">.*?<\\\/ul>)/",
+			"item": "/<li>/",
+			"setKeys": {
+				"title": "/<h2>.*?<a.*?>(.*?)</",
+				"scontent": "/<h3>(.*?)<\\\/h3>/",
+				"link": "/<h2>.*?<a.*?href=\"(.*?)\"/",
+				"image": "/<img.*?src=\"(.*?)\"/",
+				"source": "/<em class=\"txt\">(.*?)<\\\/em><em class=\"line\">/",
+				"pdate": "/([0-9]{4}年[0-9]{2}月[0-9]{2}日 [0-9]{2}:[0-9]{2}:[0-9]{2})/",
+				"pdateRepPattern": {
+					"年": "-",
+					"月": "-",
+					"日": ""
+				}
+			},
+			"itemPage": {
+				"content": "/(<div class=\"article-body\".*?)<div class=\"moreinfo\"/"
+			}
+		},
+		{
+			"name": "高考",
+			"columnid": 48,
+			"columnviceid": 17,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod": "nt_home_edu_gk",
+				"merge": 3,
+				"statics": 1,
+				"length": 60,
+				"down": 0,
+				"offset": 0,
+				"cids": "80440",
+				"type": "std_news",
+				"editLevel": "0,1,2,3",
+				"pageSize": 20,
+				"action": 0,
+				"up": 0
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title": "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb","thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "考试",
+			"columnid": 49,
+			"columnviceid": 17,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_edu_ks",
+				"merge":3,
+				"statics":1,
+				"length":60,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"80442,80443,80449",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title": "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb","thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "海外教育",
+			"columnid": 50,
+			"columnviceid": 17,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_edu_cg",
+				"merge":3,
+				"statics":1,
+				"length":60,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"80450",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title": "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb","thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "校园",
+			"columnid": 51,
+			"columnviceid": 17,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "http://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cre":"tianyi",
+				"mod":"nt_home_edu_zxx",
+				"merge":3,
+				"statics":1,
+				"length":60,
+				"up":0,
+				"down":0,
+				"action":0,
+				"offset":0,
+				"cids":"80446,80453,80441",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title": "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb","thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "生活时尚",
+			"columnid": 52,
+			"columnviceid": 18,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cids":"264",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20,
+				"up":0,
+				"down":0,
+				"mod":"nt_home_fashion_life",
+				"action":0
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "时装",
+			"columnid": 53,
+			"columnviceid": 18,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cids":"267",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20,
+				"up":0,
+				"down":0,
+				"mod":"nt_home_fashion_style",
+				"action":0
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "美容",
+			"columnid": 54,
+			"columnviceid": 18,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cids":"266",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20,
+				"up":0,
+				"down":0,
+				"mod":"nt_home_fashion_beauty",
+				"action":0
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		},
+		{
+			"name": "圈子",
+			"columnid": 55,
+			"columnviceid": 18,
+			"method": "GET",
+			"listType": "JSON",
+			"uri": "https://interface.sina.cn/pc_api/public_news_data.d.json?",
+			"params": {
+				"cids":"271,272,294",
+				"type":"std_news",
+				"editLevel":"0,1,2,3",
+				"pageSize":20,
+				"up":0,
+				"down":0,
+				"mod":"nt_home_fashion_chat",
+				"action":0
+			},
+			"modifyKeys": {
+				"action": [0, 1],
+				"up": [1, 1]
+			},
+			"responseListKey": "data",
+			"setKeys": {
+				"title":  "title",
+				"scontent": "summary",
+				"pdate": "fpTime",
+				"link": "url",
+				"image": ["thumb", "thumbs,0"],
+				"source": "media"
+			},
+			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		}
+	]
+}

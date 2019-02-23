@@ -1,0 +1,159 @@
+Gaokao:
+URI:
+http://interface.sina.cn/pc_api/public_news_data.d.json?
+Params:
+[
+	'cre'=>'tianyi',
+	'mod'=>'nt_home_edu_gk',
+	'merge'=>3,
+	'statics'=>1,
+	'length'=>60,
+	'down'=>0,
+	'offset'=>0,
+	'cids'=>'80440',
+	'type'=>'std_news',
+	'editLevel'=>'0,1,2,3',
+	'pageSize'=>20,
+	'action'=>0,
+	'up'=>0
+]
+Modify:
+'action'->1,
+'up'->increment 1
+Response: $res
+$list = $res['data']
+Set:
+[
+	'title' => $item['title'],
+	'scontent'=>$item['ltitle'],
+    'pdate'=>$item['ctime'],
+	'link'=>$item['url'],
+	'image'=>$item['thumb'] OR $item['thumbs'][0],
+	'source'=>$item['media']
+]
+
+
+
+Soccer China:
+URI:
+http://interface.sina.cn/pc_api/public_news_data.d.json?
+Params:
+[
+	'cre'=>'tianyi',
+	'mod'=>'nt_home_sports_china',
+	'merge'=>3,
+	'statics'=>1,
+	'offset'=>0,
+	'down'=>0,
+	'cids'=>'57299',
+	'editLevel'=>'0,1,2,3,4',
+	'pageSize'=>12,
+	'type'=>'sports_news',
+	'action'=>0,
+	'up'=>0
+]
+Modify:
+'action'->1,
+'up'->increment 1
+Response: $res
+$list = $res['data']
+Set:
+[
+	'title' => $item['title'],
+	'scontent'=>$item['ltitle'],
+    'pdate'=>$item['ctime'],
+	'link'=>$item['url'],
+	'image'=>$item['thumb'] OR $item['thumbs'][0],
+	'source'=>$item['media']
+]
+
+
+
+NBA:
+URI:
+http://interface.sina.cn/pc_api/public_news_data.d.json?
+Params:
+[
+	'cre'=>'tianyi',
+	'mod'=>'nt_home_sports_nba',
+	'merge'=>3,
+	'statics'=>1,
+	'offset'=>0,
+	'down'=>0,
+	'cids'=>'57316',
+	'editLevel'=>'0,1,2,3,4',
+	'pageSize'=>12,
+	'type'=>'sports_news',
+	'action'=>'0',
+	'up'=>0
+]
+Modify:
+'action'->1,
+'up'->increment 1
+Response: $res
+$list = $res['data']
+Set:
+[
+	'title' => $item['title'],
+	'scontent'=>$item['summary'],
+    'pdate'=>$item['ctime'],
+	'link'=>$item['url'],
+	'image'=>$item['thumb'] OR $item['thumbs'][0],
+	'source'=>$item['media']
+]
+
+
+
+Domestic:
+URI:
+https://feed.sina.com.cn/api/roll/get?
+Params:
+[
+	'versionNumber'=>'1.2.4',
+	'num'=>30,
+	'encode'=>'utf-8',
+	'pageid'=>121,
+	'lid'=>1356,
+	'page'=>1
+]
+Modify:
+'page'->increment 1
+Response: $res
+$list = $res['result']['data']
+Set:
+[
+	'title'=>$item['title'],
+	'scontent'=>$item['intro'],
+	'pdate'=>$item['ctime'],
+	'link'=>$item['url'] OR count(json_decode($item['urls'])) > 1 for slides,
+	'image'=>$item['img']['u'] OR $item['images'][0]['u'],
+	'source'=>$item['media_name']
+]
+
+
+
+Music:
+URI:
+https://feed.sina.com.cn/api/roll/get?
+Params:
+[
+	'versionNumber'=>'1.2.4',
+	'num'=>30,
+	'encode'=>'utf-8',
+	'pageid'=>50,
+	'lid'=>697,
+	'page'=>1
+]
+Modify:
+'page'->increment 1
+Response: $res
+$list = $res['result']['data']
+Set:
+[
+	'title'=>$item['title'],
+	'scontent'=>$item['intro'],
+	'pdate'=>$item['ctime'],
+	'link'=>$item['url'] OR count(json_decode($item['urls'])) > 1 for slides,
+	'image'=>$item['img']['u'] OR $item['images'][0]['u'],
+	'source'=>$item['media_name']
+]

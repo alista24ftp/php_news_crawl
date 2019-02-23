@@ -1,0 +1,19 @@
+{
+    "categories": [
+        {
+            "name": "a",
+            "pattern": "/^\\((.*?)\\)$/",
+            "updated_at": 1550739924
+        },
+        {
+            "name": "b",
+            "pattern": "/(<div class=\"d\".*?<\\/div>)<div class=\"/",
+            "updated_at": 1550739924
+        },
+        {
+            "name": "c",
+            "tag": "<tag>",
+            "updated_at": 1550739924
+        }
+    ]
+}

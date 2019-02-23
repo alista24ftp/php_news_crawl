@@ -1,0 +1,534 @@
+{
+    "categories": [
+        {
+            "name": "社会",
+            "columnid": 20,
+            "columnviceid": 20,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0003",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0003",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902050
+        },
+        {
+            "name": "国际",
+            "columnid": 23,
+            "columnviceid": 23,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0011",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0011",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902084
+        },
+        {
+            "name": "军事",
+            "columnid": 22,
+            "columnviceid": 22,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0005",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0005",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902116
+        },
+        {
+            "name": "科技",
+            "columnid": 15,
+            "columnviceid": 15,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0008",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0008",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902148
+        },
+        {
+            "name": "体育",
+            "columnid": 5,
+            "columnviceid": 5,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0006",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0006",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902191
+        },
+        {
+            "name": "娱乐",
+            "columnid": 3,
+            "columnviceid": 3,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0002",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0002",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902248
+        },
+        {
+            "name": "财经",
+            "columnid": 2,
+            "columnviceid": 2,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0004",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0004",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902279
+        },
+        {
+            "name": "汽车",
+            "columnid": 6,
+            "columnviceid": 6,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0012",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0012",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902308
+        },
+        {
+            "name": "人文",
+            "columnid": 62,
+            "columnviceid": 62,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0018",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0018",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902361
+        },
+        {
+            "name": "家居",
+            "columnid": 44,
+            "columnviceid": 44,
+            "method": "GET",
+            "listType": "HTMLJSON",
+            "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
+            "params": {
+                "type": "0021",
+                "readhistory": "null,null,null"
+            },
+            "modifyUri": "http://ttpc.dftoutiao.com/jsonpc/next?",
+            "modifyParams": {
+                "type": "0021",
+                "startkey": null,
+                "newsnum": 20,
+                "isnew": 1
+            },
+            "modifyKeys": {
+                "startkey": [
+                    2,
+                    "startkey"
+                ]
+            },
+            "trimVar": [
+                {
+                    "pattern": "/^.*?\\(/",
+                    "replacement": ""
+                },
+                {
+                    "pattern": "/\\)$/",
+                    "replacement": ""
+                }
+            ],
+            "responseListKey": "data",
+            "setKeys": {
+                "title": "topic",
+                "scontent": "brief",
+                "notTimestamp": true,
+                "pdate": "date",
+                "linkPrepend": "http://mini.eastday.com/a/",
+                "link": "url",
+                "image": [
+                    "lbimg,0,src"
+                ],
+                "source": "source"
+            },
+            "itemPage": {
+                "useDOMCrawler": true,
+                "content": ".J-contain_detail_cnt"
+            },
+            "updated_at": 1550902395
+        }
+    ]
+}
