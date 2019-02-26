@@ -27,7 +27,12 @@
 				"image": ["img,u", "images,0,u"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "军事",
@@ -43,23 +48,46 @@
 			"modifyKeys": {
 				"page": [1,1]
 			},
-			"listArea": "/<div class=\"fixList\">(.*?)<\\\/div>/",
-			"item": "/<li>/",
+			"listArea": ".fixList",
+			"item": "li",
 			"setKeys": {
-				"title": "/<a.*?>(.*?)</",
-				"scontent": "/<none>/",
-				"link": "/<a.*?href=\"(.*?)\"/"
+				"title": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<a.*?>(.*?)</"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<none>/"
+                },
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "a",
+                    "attr": "href"
+                }
 			},
 			"itemPage": {
-				"content": "/(<div class=\"article\".*?)<div class=\"article-bottom clearfix\"/",
-				"pdate": "/<span class=\"date\">(.*?)<\\\/span>/",
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\".*?)<div class=\"article-bottom clearfix\"/"
+                },
+				"pdate": {
+                    "useDOMCrawler": true,
+                    "selector": "span.date"
+                },
 				"pdateRepPattern": {
 					"年": "-",
 					"月": "-",
 					"日": ""
 				},
-				"source": "/<span class=\"date\">.*?<a.*?class=\"source\".*?>(.*?)</",
-				"image": "/<div class=\"article\".*?<img.*src=\"(.*?)\"/"
+				"source": {
+                    "useDOMCrawler": true,
+                    "selector": "a.source"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": ".article img",
+                    "attr": "src"
+                }
 			}
 		},
 		{
@@ -84,7 +112,12 @@
 				"image": ["img"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "股票",
@@ -110,7 +143,12 @@
 				"image": ["pic"],
 				"source": "source"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "基金",
@@ -136,7 +174,12 @@
 				"image": ["pic"],
 				"source": "source"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+		    "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "理财",
@@ -168,7 +211,12 @@
 				"image": ["img"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "外汇",
@@ -184,23 +232,45 @@
 			"modifyKeys": {
 				"page": [1, 1]
 			},
-			"listArea": "/(<div class=\"hs01\">.*?)<div class=\"hs01\">/",
-			"item": "/<li>/",
+			"listArea": ".listBlk",
+			"item": "li",
 			"setKeys": {
-				"title": "/<a.*?>(.*?)<\\\/a>/",
-				"scontent": "/<p class=\"intro\">(.*?)</",
-				"link": "/<a.*?href=\"(.*?)\"/"
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "a"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"intro\">(.*?)</"
+                },
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "a",
+                    "attr": "href"
+                }
 			},
 			"itemPage": {
-				"pdate": "/class=\"date\">(.*?)</",
+				"pdate": {
+                    "useDOMCrawler": false,
+                    "pattern": "/class=\"date\">(.*?)</"
+                },
 				"pdateRepPattern": {
 					"年": "-",
 					"月": "-",
 					"日": ""
 				},
-				"source": "/class=\"source ent-source\".*?>(.*?)</",
-				"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/",
-				"image": "/<div class=\"article\" id=\"arti.*?<img.*?src=\"(.*?)\"/"
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/class=\"source ent-source\".*?>(.*?)</"
+                },
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                },
+				"image": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<div class=\"article\" id=\"arti.*?<img.*?src=\"(.*?)\"/"
+                }
 			}
 		},
 		{
@@ -237,7 +307,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "国际足球",
@@ -273,7 +348,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "国足",
@@ -309,7 +389,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "综合体育",
@@ -336,7 +421,12 @@
 				"image": ["thumb"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "手机",
@@ -373,7 +463,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "互联网",
@@ -410,7 +505,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/正文内容 begin.*?(<div.*?id=\"artibody\".*?)<div class=\"attitude\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/正文内容 begin.*?(<div.*?id=\"artibody\".*?)<div class=\"attitude\"/"
+                }
+            }
 		},
 		{
 			"name": "数码",
@@ -447,7 +547,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "探索",
@@ -484,7 +589,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "音乐",
@@ -513,7 +623,12 @@
 				"image": ["img,u", "images,0,u"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "电影",
@@ -542,7 +657,12 @@
 				"image": ["img,u", "images,0,u"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "电视",
@@ -571,7 +691,12 @@
 				"image": ["img,u", "images,0,u"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "综艺",
@@ -600,7 +725,12 @@
 				"image": ["img,u", "images,0,u"],
 				"source": "media_name"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "新车",
@@ -618,18 +748,41 @@
 				"page": [1,1]
 			},
 			"responseListKey": "data",
-			"item": "/<div class=\"con\">/",
+            "item": ".con",
 			"setKeys": {
-				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
-				"scontent": "/<p class=\"intro\">(.*?)</",
-				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"intro\">(.*?)</"
+                },
+				"pdate": {
+                    "useDOMCrawler": true,
+                    "selector": "span.time"
+                },
 				"notTimestamp": true,
-				"link": "/<h3><a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/"
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "src"
+                }
 			},
 			"itemPage": {
-				"source": "/class=\"source ent-source\".*?>(.*?)</",
-				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/class=\"source ent-source\".*?>(.*?)</"
+                },
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
 			}
 		},
 		{
@@ -648,18 +801,41 @@
 				"page": [1,1]
 			},
 			"responseListKey": "data",
-			"item": "/<div class=\"con\">/",
+            "item": ".con",
 			"setKeys": {
-				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
-				"scontent": "/<p class=\"intro\">(.*?)</",
-				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"intro\">(.*?)</"
+                },
+				"pdate": {
+                    "useDOMCrawler": true,
+                    "selector": "span.time"
+                },
 				"notTimestamp": true,
-				"link": "/<h3><a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/"
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "src"
+                }
 			},
 			"itemPage": {
-				"source": "/class=\"source ent-source\".*?>(.*?)</",
-				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/class=\"source ent-source\".*?>(.*?)</"
+                },
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
 			}
 		},
 		{
@@ -678,18 +854,41 @@
 				"page": [1,1]
 			},
 			"responseListKey": "data",
-			"item": "/<div class=\"con\">/",
+			"item": ".con",
 			"setKeys": {
-				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
-				"scontent": "/<p class=\"intro\">(.*?)</",
-				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"intro\">(.*?)</"
+                },
+				"pdate": {
+                    "useDOMCrawler": true,
+                    "selector": "span.time"
+                },
 				"notTimestamp": true,
-				"link": "/<h3><a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/"
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "src"
+                }
 			},
 			"itemPage": {
-				"source": "/class=\"source ent-source\".*?>(.*?)</",
-				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/class=\"source ent-source\".*?>(.*?)</"
+                },
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
 			}
 		},
 		{
@@ -708,18 +907,41 @@
 				"page": [1,1]
 			},
 			"responseListKey": "data",
-			"item": "/<div class=\"con\">/",
+			"item": ".con",
 			"setKeys": {
-				"title": "/<h3><a.*?>(.*?)<\\\/a><\\\/h3>/",
-				"scontent": "/<p class=\"intro\">(.*?)</",
-				"pdate": "/<span class=\"time fL\">(.*?)<\\\/span>/",
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"intro\">(.*?)</"
+                },
+				"pdate": {
+                    "useDOMCrawler": true,
+                    "selector": "span.time"
+                },
 				"notTimestamp": true,
-				"link": "/<h3><a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/"
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "h3 a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "src"
+                }
 			},
 			"itemPage": {
-				"source": "/class=\"source ent-source\".*?>(.*?)</",
-				"content": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/class=\"source ent-source\".*?>(.*?)</"
+                },
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article clearfix\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
 			}
 		},
 		{
@@ -736,18 +958,41 @@
 			"modifyKeys": {
 				"p": [1,1]
 			},
-			"listArea": "/(<div class=\"newslist\">.*?)<div class=\"loadmore\"/",
-			"item": "/<dl class=\"clearfix onepic\">/",
+			"listArea": ".newslist",
+			"item": "dl",
 			"setKeys": {
-				"title": "/<h4>.*?<a.*?>(.*?)</",
-				"scontent": "/<p class=\"intro\">(.*?)</",
-				"link": "/<h4>.*?<a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?lsrc=\"(.*?)\"/",
-				"pdate": "/data-time=\"(.*?)\"/",
-				"source": "/<div class=\"fr\">.*?<a.*?>(.*?)<\\\/a>/"
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "h4 a"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"intro\">(.*?)</"
+                },
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "h4 a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "lsrc"
+                },
+				"pdate": {
+                    "useDOMCrawler": false,
+                    "pattern": "/data-time=\"(.*?)\"/"
+                },
+				"source": {
+                    "useDOMCrawler": true,
+                    "selector": ".fr a"
+                }
 			},
 			"itemPage": {
-				"content": "/(<div id=\"articleText\">.*?)<div id=\"keyword\"/"
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div id=\"articleText\">.*?)<div id=\"keyword\"/"
+                }
 			}
 		},
 		{
@@ -764,19 +1009,42 @@
 			"modifyKeys": {
 				"p": [1,1]
 			},
-			"listArea": "/<ul class=\"down_text\">(.*?)<\\\/ul>/",
-			"item": "/<li>/",
+			"listArea": ".down_text",
+			"item": "li",
 			"setKeys": {
-				"title": "/<h2>.*?<a.*?>(.*?)</",
-				"scontent": "/<p class=\"head_text\">(.*?)</",
-				"link": "/<h2>.*?<a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/",
+				"title": {
+					"useDOMCrawler": true,
+					"selector": "h2 a"
+				},
+				"scontent": {
+					"useDOMCrawler": true,
+					"selector": ".head_text"
+				},
+				"link": {
+					"useDOMCrawler": true,
+					"selector": "h2 a",
+					"attr": "href"
+				},
+				"image": {
+					"useDOMCrawler": true,
+					"selector": "img",
+					"attr": "src"
+				},
 				"notTimestamp": true
 			},
 			"itemPage": {
-				"pdate": "/<ul class=\"share_one\">.*?<li>.*?<li>(.*?)</",
-				"source": "/<ul class=\"share_one\">.*?<li>(.*?)</",
-				"content": "/(<div class=\"quintessence\".*?)<div class=\"enterinto\"/"
+				"pdate": {
+					"useDOMCrawler": false,
+					"pattern": "/<ul class=\"share_one\">.*?<li>.*?<li>(.*?)</"
+				},
+				"source": {
+					"useDOMCrawler": false,
+					"pattern": "/<ul class=\"share_one\">.*?<li>(.*?)</"
+				},
+				"content": {
+					"useDOMCrawler": true,
+					"selector": ".quintessence"
+				}
 			}
 		},
 		{
@@ -793,19 +1061,42 @@
 			"modifyKeys": {
 				"/": [1,1]
 			},
-			"listArea": "/(<!--列表开始-->.*?)<!--列表结束-->/",
-			"item": "/<div class=\"clearfix ds_item_news\">/",
+			"listArea": ".m_content_left",
+			"item": ".ds_item_news",
 			"setKeys": {
-				"title": "/<strong class=\"ds_tit\"><a.*?>(.*?)</",
-				"scontent": "/<p class=\"ds_txt\">(.*?)<a/",
-				"link": "/<strong class=\"ds_tit\"><a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/",
+				"title": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<strong class=\"ds_tit\"><a.*?>(.*?)</"
+                },
+				"scontent": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<p class=\"ds_txt\">(.*?)<a/"
+                },
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": ".ds_tit a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "src"
+                },
 				"notTimestamp": true
 			},
 			"itemPage": {
-				"content": "/<div class=\"m_info_detail_con\">(.*?)<div class=\"m_info_detail_pagebox\">/",
-				"pdate": "/<span class=\"m_mr10\">(.*?)</",
-				"source": "/来源.*?<span class=\"m_mr30\">(.*?)</"
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<div class=\"m_info_detail_con\">(.*?)<div class=\"m_info_detail_pagebox\">/"
+                },
+				"pdate": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<span class=\"m_mr10\">(.*?)</"
+                },
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/来源.*?<span class=\"m_mr30\">(.*?)</"
+                }
 			}
 		},
 		{
@@ -821,15 +1112,35 @@
 			"modifyKeys": {
 				"page": [1,1]
 			},
-			"listArea": "/(<ul class=\"y_new_list y_new_list02\">.*?<\\\/ul>)/",
-			"item": "/<li>/",
+			"listArea": ".y_subleft .y_new_list",
+			"item": "li",
 			"setKeys": {
-				"title": "/<h2>.*?<a.*?>(.*?)</",
-				"scontent": "/<h3>(.*?)<\\\/h3>/",
-				"link": "/<h2>.*?<a.*?href=\"(.*?)\"/",
-				"image": "/<img.*?src=\"(.*?)\"/",
-				"source": "/<em class=\"txt\">(.*?)<\\\/em><em class=\"line\">/",
-				"pdate": "/([0-9]{4}年[0-9]{2}月[0-9]{2}日 [0-9]{2}:[0-9]{2}:[0-9]{2})/",
+				"title": {
+                    "useDOMCrawler": true,
+                    "selector": "h2 a"
+                },
+				"scontent": {
+                    "useDOMCrawler": true,
+                    "selector": "h3"
+                },
+				"link": {
+                    "useDOMCrawler": true,
+                    "selector": "h2 a",
+                    "attr": "href"
+                },
+				"image": {
+                    "useDOMCrawler": true,
+                    "selector": "img",
+                    "attr": "src"
+                },
+				"source": {
+                    "useDOMCrawler": false,
+                    "pattern": "/<em class=\"txt\">(.*?)<\\/em><em class=\"line\">/"
+                },
+				"pdate": {
+                    "useDOMCrawler": false,
+                    "pattern": "/([0-9]{4}年[0-9]{2}月[0-9]{2}日 [0-9]{2}:[0-9]{2}:[0-9]{2})/"
+                },
 				"pdateRepPattern": {
 					"年": "-",
 					"月": "-",
@@ -837,7 +1148,10 @@
 				}
 			},
 			"itemPage": {
-				"content": "/(<div class=\"article-body\".*?)<div class=\"moreinfo\"/"
+				"content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article-body\".*?)<div class=\"moreinfo\"/"
+                }
 			}
 		},
 		{
@@ -875,7 +1189,12 @@
 				"image": ["thumb","thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "考试",
@@ -912,7 +1231,12 @@
 				"image": ["thumb","thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "海外教育",
@@ -949,7 +1273,12 @@
 				"image": ["thumb","thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "校园",
@@ -986,7 +1315,12 @@
 				"image": ["thumb","thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "生活时尚",
@@ -1018,7 +1352,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "时装",
@@ -1050,7 +1389,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "美容",
@@ -1082,7 +1426,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+			"itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		},
 		{
 			"name": "圈子",
@@ -1114,7 +1463,12 @@
 				"image": ["thumb", "thumbs,0"],
 				"source": "media"
 			},
-			"content": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+            "itemPage": {
+                "content": {
+                    "useDOMCrawler": false,
+                    "pattern": "/(<div class=\"article\" id=\"arti.*?)<div class=\"article-bottom clearfix\"/"
+                }
+            }
 		}
 	]
 }

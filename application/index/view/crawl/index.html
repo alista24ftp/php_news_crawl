@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crawler Index</title>
+</head>
+<body>
+    <form method="POST" action="{:url('crawlall')}">
+        <p>Choose which file you want to use to crawl: </p>
+        <br>
+        {volist name="json_files" id="filename"}
+        <input type="radio" name="json_name" value="{$filename}">{$filename}<br>
+        {/volist}
+
+        <button type="submit">Choose</button>
+    </form>
+</body>
+</html>

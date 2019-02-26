@@ -48,10 +48,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902050
+            "updated_at": 1551059403
         },
         {
             "name": "国际",
@@ -101,10 +103,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902084
+            "updated_at": 1551059431
         },
         {
             "name": "军事",
@@ -154,10 +158,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902116
+            "updated_at": 1551059470
         },
         {
             "name": "科技",
@@ -207,10 +213,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902148
+            "updated_at": 1551059502
         },
         {
             "name": "体育",
@@ -260,10 +268,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902191
+            "updated_at": 1551059529
         },
         {
             "name": "娱乐",
@@ -313,10 +323,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902248
+            "updated_at": 1551059540
         },
         {
             "name": "财经",
@@ -366,10 +378,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902279
+            "updated_at": 1551059568
         },
         {
             "name": "汽车",
@@ -419,10 +433,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902308
+            "updated_at": 1551059594
         },
         {
             "name": "人文",
@@ -472,10 +488,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902361
+            "updated_at": 1551059622
         },
         {
             "name": "家居",
@@ -525,10 +543,12 @@
                 "source": "source"
             },
             "itemPage": {
-                "useDOMCrawler": true,
-                "content": ".J-contain_detail_cnt"
+                "content": {
+                    "useDOMCrawler": true,
+                    "selector": ".J-contain_detail_cnt"
+                }
             },
-            "updated_at": 1550902395
+            "updated_at": 1551059654
         }
     ]
 }

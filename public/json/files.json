@@ -1,0 +1,8 @@
+{
+  "sina": {
+    "path": "./json/sina.json"
+  },
+  "eastday": {
+    "path": "./json/eastday.json"
+  }
+}
