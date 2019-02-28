@@ -42,14 +42,19 @@ class Crawl
             && isset($this->jsons[$jsonName])
             && !$this->doesntExist($this->jsons[$jsonName]))
         {
-            $json = $this->jsons[$jsonName];
-            foreach($json['json']['categories'] as $index=>$category){
-                $this->crawl($jsonName, $index);
+            try{
+                $json = $this->jsons[$jsonName];
+                foreach($json['json']['categories'] as $index=>$category){
+                    $this->crawl($jsonName, $index);
+                }
+
+                // write back to corresponding JSON file
+                $this->toJsonFile($json['json'], $json['path']);
+                return 'Crawl successful';
+            }catch(\Exception $e){
+                return $e->getTraceAsString();
             }
 
-            // write back to corresponding JSON file
-            $this->toJsonFile($json['json'], $json['path']);
-            return 'Crawl successful';
         }
         return 'JSON file doesn\'t exist';
     }
@@ -89,11 +94,13 @@ class Crawl
             }
 
             $dataWithList = $html;
-            if($this->isJson($category)){
+            if($this->isJson($category) || $this->isJsonHtml($category)){
                 $dataWithList = json_decode($html, true);
             }
             $list = $this->getList($category, $dataWithList);
             if(!is_array($list)) break;
+
+            //dump($list); exit;
 
             $listInfo = $this->getInfoFromList($category, $list, $listKeys, $numNews);
             $tempLinks = $listInfo['tempLinks'];
@@ -136,10 +143,7 @@ class Crawl
 
     public function test()
     {
-        $html = $this->getHtml('http://interface.sina.cn/auto/inner/getAutoSubpageInfo.d.json?cid=158929&pageSize=15&page=1');
-        $json = json_decode($html, true);
-        $listArea = $json['data'];
-        dump($listArea);
+        $this->crawl('sina', 26);
     }
 
     // Getters/Setters
@@ -189,10 +193,11 @@ class Crawl
                 break;
 
             foreach($keys as $key){
-                if($this->isHtml($category) && $category['setKeys'][$key]['useDOMCrawler'])
+                if(($this->isHtml($category) || $this->isJsonHtml($category))
+                    && $category['setKeys'][$key]['useDOMCrawler'])
                 {
                     $itemData[$key] = $this->getValWithDOMCrawler($category['setKeys'][$key], $item);
-                }else if($this->isHtml($category)){
+                }else if($this->isHtml($category) || $this->isJsonHtml($category)){
                     $itemData[$key] = $this->getProp($category['setKeys'][$key]['pattern'], $item);
                 }else{
                     $itemData[$key] = $item[$category['setKeys'][$key]];
@@ -421,11 +426,29 @@ class Crawl
             foreach($listKey as $k=>$v){
                 $list = $list[$v];
             }
+        }else if($this->isJsonHtml($category)){
+            $listKey = explode(',',$category['responseListKey']);
+            $listHtml = $dataWithList;
+            foreach($listKey as $k=>$v){
+                $listHtml = $listHtml[$v];
+            }
+            $this->addHtmlToCrawler($listHtml);
+            $crawler = $this->domCrawler;
+            if(isset($category['listArea'])){
+                $listArea = $category['listArea'];
+                $crawler = $crawler->filter("$listArea");
+            }
+            $item = $category['item'];
+            $list = $crawler->filter("$item")
+                ->each(function(DOMCrawler $node, $i){
+                    return $node->html();
+                });
         }else{
             $html = $dataWithList;
             $this->addHtmlToCrawler($html);
             $listArea = $category['listArea'];
             $item = $category['item'];
+
             $list = $this->domCrawler->filter("$listArea")
                 ->filter("$item")
                 ->each(function(DOMCrawler $node, $i){
@@ -456,14 +479,18 @@ class Crawl
 
     private function isJson($category)
     {
-        return $category['listType'] == 'JSON'
-            || $category['listType'] == 'HTMLJSON'
-            || $category['listType'] == 'JSONHTML';
+        return $category['listType'] == 'JSON';
     }
 
     private function isHtml($category)
     {
         return $category['listType'] == 'HTML';
+    }
+
+    private function isJsonHtml($category)
+    {
+        return $category['listType'] == 'JSONHTML'
+            || $category['listType'] == 'HTMLJSON';
     }
 
     private function doesntExist($item){
@@ -481,6 +508,10 @@ class Crawl
         $html = preg_replace("/<script.*?<\/script>/", "", $html);
         $html = preg_replace("/<style.*?<\/style>/", "", $html);
         //$html = preg_replace("/style=\".*?\">/", ">", $html);//
+        $html = preg_replace("/<html.*?>/", "", $html);
+        $html = preg_replace("/<\/html.*?>/", "", $html);
+        $html = preg_replace("/<body.*?>/", "", $html);
+        $html = preg_replace("/<\/body.*?>/", "", $html);
 
         return $html;
     }

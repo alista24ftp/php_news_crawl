@@ -21,8 +21,9 @@ class Crawl extends Base
     {
         $name = input('json_name', 'eastday');
         $msg = $crawl->crawlAll($name);
-        $this->assign('msg', $msg);
-        return $this->fetch();
+        //$this->assign('msg', $msg);
+        //return $this->fetch();
+        echo $msg;
     }
 
     public function crawl(CrawlHelper $crawl)

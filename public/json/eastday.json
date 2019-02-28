@@ -5,7 +5,7 @@
             "columnid": 20,
             "columnviceid": 20,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0003",
@@ -60,7 +60,7 @@
             "columnid": 23,
             "columnviceid": 23,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0011",
@@ -115,7 +115,7 @@
             "columnid": 22,
             "columnviceid": 22,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0005",
@@ -170,7 +170,7 @@
             "columnid": 15,
             "columnviceid": 15,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0008",
@@ -225,7 +225,7 @@
             "columnid": 5,
             "columnviceid": 5,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0006",
@@ -280,7 +280,7 @@
             "columnid": 3,
             "columnviceid": 3,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0002",
@@ -335,7 +335,7 @@
             "columnid": 2,
             "columnviceid": 2,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0004",
@@ -390,7 +390,7 @@
             "columnid": 6,
             "columnviceid": 6,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0012",
@@ -445,7 +445,7 @@
             "columnid": 62,
             "columnviceid": 62,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0018",
@@ -500,7 +500,7 @@
             "columnid": 44,
             "columnviceid": 44,
             "method": "GET",
-            "listType": "HTMLJSON",
+            "listType": "JSON",
             "uri": "http://ttpc.dftoutiao.com/jsonpc/refresh?",
             "params": {
                 "type": "0021",

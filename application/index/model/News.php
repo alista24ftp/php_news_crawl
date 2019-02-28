@@ -21,10 +21,9 @@ class News extends Model
         try{
             Db::name('news')->insertAll($allNews);
             Db::commit();
-            echo "Insert successfully in db...\n";
         }catch(\Exception $e){
             Db::rollback();
-            echo "Insert failed";
+            throw $e;
         }
     }
 

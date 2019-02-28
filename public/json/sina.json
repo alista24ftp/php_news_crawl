@@ -1112,7 +1112,7 @@
 			"modifyKeys": {
 				"page": [1,1]
 			},
-			"listArea": ".y_subleft .y_new_list",
+			"listArea": ".y_new_list",
 			"item": "li",
 			"setKeys": {
 				"title": {
