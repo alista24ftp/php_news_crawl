@@ -6,7 +6,7 @@ while true
 do
     now=$(date)
     echo -e "Crawl at $now: " >> $outfile
-    curl http://newscrawl.net/index/Crawl/crawlAll >> $outfile
+    curl http://newscrawl.net/index/Crawl/crawlall >> $outfile
     echo -e "-----------------------------------------------------------\n" >> $outfile
     sleep $period # sleep for seconds
 done
